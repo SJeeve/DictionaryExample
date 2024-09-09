@@ -18,10 +18,13 @@ namespace IntroToDictionary
         {
             //Does a brute force check to see if any number combination matches the target
             //Complexity of O(n^2)
+            int numOfChecks = 1;
             for(int i = 0; i < nums.Length - 1; i++)
             {
                 for(int j = i + 1; j < nums.Length; j++)
                 {
+                    Console.WriteLine($"Current check: {numOfChecks}");
+                    numOfChecks++;
                     if (nums[i] + nums[j] == target)
                         return new int[] { i, j };
                 }
@@ -37,11 +40,12 @@ namespace IntroToDictionary
             //Holds key num and value index
             //Also called a hash table in other languages
             Dictionary<int, int> seen = new Dictionary<int, int>();
-            
+            int numOfChecks = 1;
             for (int i = 0; i < nums.Length; i++)
             {
                 //x + y = target
                 //so y = target - x
+                Console.WriteLine($"Current check: {numOfChecks}");
                 int diff = target - nums[i];
                 if (seen.ContainsKey(diff))
                 {
