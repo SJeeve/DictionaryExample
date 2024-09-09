@@ -28,8 +28,10 @@ namespace IntroToDictionary
             }
             return new int[] { -1, -1 };
         }
+        
         //You can also sort the array and do a two point approach which has a complexity of O(log(n))
         //but I don't feel like coding that 
+        
         private static int[] twoSumHash(int[] nums, int target)
         {
             //Holds key num and value index
